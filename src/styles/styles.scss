@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'themes-overrides';
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  margin: 0;
+  padding: 0;
+
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+}
+
+.content {
+  padding: 1rem;
+}

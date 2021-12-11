@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "60b15b6c-1c96-4771-a4fe-c30be17b5890"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo1": {
+    "build-a-webApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,20 +23,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo1",
+            "outputPath": "dist/build-a-webApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles/styles.scss", "node_modules/bootstrap-icons/font/bootstrap-icons.css"],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
             "production": {
@@ -72,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "demo1:build:production"
+              "browserTarget": "build-a-webApp:build:production"
             },
             "development": {
-              "browserTarget": "demo1:build:development"
+              "browserTarget": "build-a-webApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demo1:build"
+            "browserTarget": "build-a-webApp:build"
           }
         },
         "test": {
@@ -94,18 +92,13 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "demo1"
+  "defaultProject": "build-a-webApp"
 }

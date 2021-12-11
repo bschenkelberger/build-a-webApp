@@ -1,0 +1,29 @@
+<div class="content">
+    <h2>Bitte geben Sie Ihren Namen ein:</h2>
+    <!-- <div class="rounded border bg-light p-3"> -->
+    <div>
+      <form [formGroup]="formGroup">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-floating"><!--form-floating required -->
+              <input type="text" class="form-control" id="name" formControlName="name" />
+              <label for="name">Name</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <button [disabled]="!formGroup.valid" (click)="onAnmelden()">Anmelden</button>
+            <!-- <button [disabled]="!formGroup.valid" [routerLink]="['/member', formGroup.get('name')?.value]">Anmelden</button> -->
+          </div>
+        </div>
+      </form>
+    </div>
+    <br/>
+    <div>
+      Folgende Eingabe machen Sie: {{ formGroup.get('name')?.value }}
+    </div>
+    <br/>
+    <div>
+      <button routerLink="/home">Zurück</button>
+    </div>
+    <!-- </div> -->
+</div>
